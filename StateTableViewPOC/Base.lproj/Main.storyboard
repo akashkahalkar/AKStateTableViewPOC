@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StateTableViewPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-eu-phe" customClass="StateTableView" customModule="StateTableViewPOC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="elk-Kz-IoL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gRp-0K-Idb"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvF-xK-9ds">
+                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                                <state key="normal" title="Show no Data"/>
+                                <connections>
+                                    <action selector="showData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynC-dd-ISa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-8X-Fdz">
+                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
+                                <state key="normal" title="Show N/W Error"/>
+                                <connections>
+                                    <action selector="showNWError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbq-5x-MU9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JvF-xK-9ds" firstAttribute="top" secondItem="bbg-eu-phe" secondAttribute="bottom" id="6lr-1t-fJG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JvF-xK-9ds" secondAttribute="bottom" id="B6L-mg-t4S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bbg-eu-phe" secondAttribute="bottom" constant="50" id="E6q-ye-deh"/>
+                            <constraint firstItem="bbg-eu-phe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TVa-Gb-I1P"/>
+                            <constraint firstItem="Vqh-8X-Fdz" firstAttribute="top" secondItem="bbg-eu-phe" secondAttribute="bottom" id="Wyq-es-RvQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbg-eu-phe" secondAttribute="trailing" id="esd-Wd-wEc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vqh-8X-Fdz" secondAttribute="trailing" id="iAe-hj-aSS"/>
+                            <constraint firstItem="JvF-xK-9ds" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="jFU-Ky-wXS"/>
+                            <constraint firstItem="JvF-xK-9ds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kvA-35-dMM"/>
+                            <constraint firstItem="Vqh-8X-Fdz" firstAttribute="height" secondItem="JvF-xK-9ds" secondAttribute="height" id="lYD-6D-he8"/>
+                            <constraint firstItem="Vqh-8X-Fdz" firstAttribute="leading" secondItem="JvF-xK-9ds" secondAttribute="trailing" id="nj5-BL-xec"/>
+                            <constraint firstItem="bbg-eu-phe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wKz-c8-Rl2"/>
+                            <constraint firstItem="Vqh-8X-Fdz" firstAttribute="width" secondItem="JvF-xK-9ds" secondAttribute="width" id="yJu-Cq-XoE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="statetableView" destination="bbg-eu-phe" id="trT-AK-ZlF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="27"/>
+        </scene>
+    </scenes>
+</document>
